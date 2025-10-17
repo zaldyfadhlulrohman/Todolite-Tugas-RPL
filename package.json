@@ -1,0 +1,14 @@
+{
+  "name": "taskflow-app",
+  "version": "1.0.0",
+  "description": "A minimalist to-do web app",
+  "scripts": {
+    "lint:js": "eslint js/**/*.js",
+    "lint:css": "stylelint css/**/*.css"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "stylelint": "^16.5.0",
+    "stylelint-config-standard": "^36.0.0"
+  }
+}
