@@ -1,0 +1,56 @@
+<div align="center">
+
+# 📝 Todolite
+## Sebuah kanvas digital untuk pikiran yang terorganisir.
+
+</div>
+
+<div align="center">
+
+Todolite adalah sebuah aplikasi to-do list yang dirancang dengan cinta untuk para minimalis. Dibangun sepenuhnya dengan teknologi web dasar, tanpa framework, tanpa keribetan. Hanya kamu, tugas-tugasmu, dan alur kerja yang tenang.
+
+</div>
+
+
+### ✨ Fitur-fitur Kunci
+
+- ✍️ Manajemen Tugas Penuh: Buat, edit, hapus, dan selesaikan tugas dengan mudah.
+
+- 🗂️ Proyek & Kategori: Kelompokkan tugas-tugasmu ke dalam proyek yang berbeda agar tetap rapi.
+
+- 🗓️ Tanggal & Prioritas: Atur tanggal jatuh tempo dan tingkat prioritas untuk setiap tugas.
+
+- 🔭 Tampilan Cerdas: Filter tugas untuk melihat apa yang harus dikerjakan "Hari Ini" atau yang "Mendatang".
+
+- 🌓 Mode Terang & Gelap: Tema yang nyaman untuk matamu, baik siang maupun malam.
+
+- 💾 Penyimpanan Lokal: Semua tugasmu tersimpan aman di browsermu, tidak akan hilang saat di-refresh.
+
+- 🔍 Pencarian & Pengurutan: Temukan tugas dengan cepat atau urutkan berdasarkan prioritas dan tanggal.
+
+- 📱 Desain Responsif: Tampilan yang tetap cantik di desktop, tablet, maupun ponsel.
+
+### 💻 Bahasa Pemrograman
+
+Aplikasi ini dibangun dengan kesederhanaan sebagai intinya:
+
+- HTML5: Untuk struktur konten yang semantik.
+
+- CSS3: (Dengan Variabel CSS) untuk styling yang modern dan tema yang dinamis.
+
+- Vanilla JavaScript (ES6+): Untuk semua logika dan interaktivitas, tanpa library eksternal.
+
+### 🚀 Cara Menjalankan
+
+Karena ini adalah proyek front-end murni, menjalankannya sangat mudah.
+
+1. Clone repositori ini:
+
+  git clone [https://github.com/bluwnn/todolite.git]
+
+
+2. Buka file index.html:
+
+  Cukup navigasi ke folder proyek yang sudah di-clone, lalu klik dua kali pada file index.html.
+
+Atau, untuk pengalaman terbaik (menghindari masalah CORS jika ada), gunakan ekstensi seperti Live Server di VS Code.
