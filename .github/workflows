@@ -1,0 +1,57 @@
+# .github/workflows/ci.yml
+
+name: CI Pipeline for Taskflow App
+
+# Kapan workflow ini akan berjalan?
+on:
+  push:
+    branches: [ develop ] # Saat ada push ke branch 'develop'
+  pull_request:
+    branches: [ develop ] # Saat ada Pull Request yang ditujukan ke 'develop'
+
+# Daftar pekerjaan yang harus dilakukan
+jobs:
+  # Pekerjaan pertama: Lakukan build dan linting
+  lint-and-check:
+    name: Lint & Quality Check
+    runs-on: ubuntu-latest # Jalankan di server virtual Ubuntu
+
+    steps:
+      # Langkah 1: Ambil kode dari repositori
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Langkah 2: Siapkan Node.js untuk menjalankan linter
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Gunakan Node.js versi 20
+
+      # Langkah 3: Install semua 'alat bantu' dari package.json
+      - name: Install Dependencies
+        run: npm install
+
+      # Langkah 4: Jalankan linter untuk JavaScript
+      - name: Run ESLint
+        run: npm run lint:js
+
+      # Langkah 5: Jalankan linter untuk CSS
+      - name: Run Stylelint
+        run: npm run lint:css
+
+  # Pekerjaan kedua: Deploy ke GitHub Pages (hanya jika pekerjaan pertama berhasil)
+  deploy-to-staging:
+    name: Deploy to GitHub Pages
+    needs: lint-and-check # Harus menunggu 'lint-and-check' selesai
+    if: github.ref == 'refs/heads/develop' && github.event_name == 'push' # Hanya jalan saat PUSH ke 'develop', bukan PR
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: . # Deploy seluruh isi folder utama
